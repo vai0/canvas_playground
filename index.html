@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Canvas</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
     <canvas id="one" width=200 height=200></canvas>
     <canvas id="two" width=200 height=200></canvas>
@@ -15,88 +18,13 @@
     <canvas id="five" width=200 height=200></canvas>
     <canvas id="six" width=200 height=200></canvas>
     <canvas id="seven" width=200 height=200></canvas>
-    <script>
-        $(function() {
-            // one
-            var one = $('#one')[0];
-            var c_one = one.getContext('2d');
-            c_one.fillRect(5, 5, 100, 100);
-            
-            // two
-            var two = $('#two')[0];
-            var c_two = two.getContext('2d');
-            c_two.beginPath();
-            c_two.moveTo(5, 5);
-            c_two.lineTo(5, 100);
-            c_two.lineTo(100, 100);
-            c_two.closePath();
-            c_two.stroke();
-
-            // three
-            var three = $('#three')[0];
-            var c_three = three.getContext('2d');
-            c_three.strokeRect(5, 5, 100, 100);
-
-            // four
-            var four = document.getElementById('four');
-            var c_four = four.getContext('2d');
-            c_four.arc(50, 50, 40, 0, degToRad(120), true);
-            c_four.stroke();
-
-            // five
-            var five = document.getElementById('five');
-            var c_five = five.getContext('2d');
-            var p0 = {
-                x: Math.random() * 90,
-                y: Math.random() * 90
-            };
-            var p1 = {
-                x: Math.random() * 90,
-                y: Math.random() * 90
-            };
-            var p2 = {
-                x: Math.random() * 90,
-                y: Math.random() * 90
-            };
-            c_five.strokeStyle = '#23D572';
-            c_five.lineWidth = 6
-            c_five.moveTo(p0.x, p0.y);
-            c_five.quadraticCurveTo(p1.x, p1.y, p2.x, p2.y);
-            c_five.stroke();
-            drawPoint(p0, c_five);
-            drawPoint(p1, c_five);
-            drawPoint(p2, c_five);
-
-            // six
-            var six = document.getElementById('six');
-            c_six = six.getContext('2d');
-            c_six.strokeStyle = '#212121';
-            c_six.fillStyle = '#FEC32E';
-            c_six.lineWidth = 14;
-            c_six.fillRect(10, 10, 100, 100);
-            c_six.strokeRect(10, 10, 100, 100);
-
-            // seven
-            var seven = document.getElementById('seven');
-            c_seven = seven.getContext('2d');
-            var gradient = c_seven.createLinearGradient(5, 5, 5, 100);
-            gradient.addColorStop(0, '#25E47A');
-            gradient.addColorStop(1, '#B4FD64');
-
-            c_seven.strokeStyle = gradient;
-            c_seven.fillStyle = '#212121';
-            c_seven.lineWidth = 20;
-            c_seven.fillRect(20, 20, 100, 100);
-            c_seven.strokeRect(20, 20, 100, 100);
-        });
-
-        function drawPoint(p, context) {
-            context.fillRect(p.x - 3, p.y - 3, 6, 6);
-        }
-
-        function degToRad(deg) {
-            return deg * Math.PI / 180;
-        } 
-    </script>
+    <canvas id="eight" width=200 height=200></canvas>
+    <canvas id="nine" width=200 height=200></canvas>
+    <canvas id="ten" width=200 height=200></canvas>
+    <canvas id="eleven" width=200 height=200></canvas>
+    <canvas id="twelve" width=200 height=200></canvas>
+    <canvas id="thirteen" width=200 height=200></canvas>
+    <script src="index.js"></script>
 </body>
+
 </html>
